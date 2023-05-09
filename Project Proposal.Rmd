@@ -137,10 +137,8 @@ Stop_time_by_Eth <- lb_police_stops %>%
 
 knitr::kable(Stop_time_by_Eth)
 
-# Tried a boxplot, but it was too crowded and there were too many extreme outliers
-
-# boxplot(Stop.Duration~Perceived.Race.Simplified, data=lb_police_stops, main="Ethnicity and Traffic Stop Duration",
-#   xlab="Ethnicity", ylab="Stop Duration")
+boxplot(Stop.Duration~Perceived.Race.Simplified, data=lb_police_stops, main="Ethnicity and Traffic Stop Duration",
+  xlab="Ethnicity", ylab="Stop Duration")
 ```
 
 Because of the outliers, the boxplot may not be the clearest visualization
