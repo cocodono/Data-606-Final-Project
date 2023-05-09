@@ -1,0 +1,113 @@
+ID Race,Race,ID Ethnicity,Ethnicity,ID Year,Year,Hispanic Population Moe,Geography,ID Geography,Slug Geography,Population,share
+0,"White Alone",0,"Not Hispanic or Latino",2020,"2020",3426,"Long Beach, CA","16000US0643000","long-beach-ca",129716,0.28072134539182525
+0,"White Alone",1,"Hispanic or Latino",2020,"2020",3949.9999999999995,"Long Beach, CA","16000US0643000","long-beach-ca",98447,0.21305139142271592
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2020,"2020",2445,"Long Beach, CA","16000US0643000","long-beach-ca",55873,0.12091602987355031
+1,"Black or African American Alone",1,"Hispanic or Latino",2020,"2020",557,"Long Beach, CA","16000US0643000","long-beach-ca",2365,0.005118150281011338
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2020,"2020",351,"Long Beach, CA","16000US0643000","long-beach-ca",1159,0.0025082182561066133
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2020,"2020",593,"Long Beach, CA","16000US0643000","long-beach-ca",2500,0.005410306850963359
+3,"Asian Alone",0,"Not Hispanic or Latino",2020,"2020",2514,"Long Beach, CA","16000US0643000","long-beach-ca",57731,0.12493696992518628
+3,"Asian Alone",1,"Hispanic or Latino",2020,"2020",430.00000000000006,"Long Beach, CA","16000US0643000","long-beach-ca",1539,0.003330584897453044
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2020,"2020",500,"Long Beach, CA","16000US0643000","long-beach-ca",2534,0.005483887024136461
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2020,"2020",112,"Long Beach, CA","16000US0643000","long-beach-ca",176,0.0003808856023078205
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2020,"2020",439.99999999999994,"Long Beach, CA","16000US0643000","long-beach-ca",1364,0.002951863417885609
+5,"Some Other Race Alone",1,"Hispanic or Latino",2020,"2020",3209,"Long Beach, CA","16000US0643000","long-beach-ca",77963,0.16872150120866256
+6,"Two or More Races",0,"Not Hispanic or Latino",2020,"2020",1201.4932376006118,"Long Beach, CA","16000US0643000","long-beach-ca",13901,0.03008347021409666
+6,"Two or More Races",1,"Hispanic or Latino",2020,"2020",2285.467567041808,"Long Beach, CA","16000US0643000","long-beach-ca",16813,0.03638539563409878
+0,"White Alone",0,"Not Hispanic or Latino",2019,"2019",2337,"Long Beach, CA","16000US0643000","long-beach-ca",131457,0.2816275901074605
+0,"White Alone",1,"Hispanic or Latino",2019,"2019",3605.9999999999995,"Long Beach, CA","16000US0643000","long-beach-ca",107653,0.23063096645928668
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2019,"2019",1901.9999999999998,"Long Beach, CA","16000US0643000","long-beach-ca",56990,0.12209282396695631
+1,"Black or African American Alone",1,"Hispanic or Latino",2019,"2019",420,"Long Beach, CA","16000US0643000","long-beach-ca",2136,0.004576070749138773
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2019,"2019",380,"Long Beach, CA","16000US0643000","long-beach-ca",1546,0.0033120811695545615
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2019,"2019",890,"Long Beach, CA","16000US0643000","long-beach-ca",3370,0.007219737090167447
+3,"Asian Alone",0,"Not Hispanic or Latino",2019,"2019",2035.9999999999998,"Long Beach, CA","16000US0643000","long-beach-ca",59918,0.12836564005004542
+3,"Asian Alone",1,"Hispanic or Latino",2019,"2019",314,"Long Beach, CA","16000US0643000","long-beach-ca",1148,0.002459423792140127
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2019,"2019",735,"Long Beach, CA","16000US0643000","long-beach-ca",3488,0.007472535006084289
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2019,"2019",115,"Long Beach, CA","16000US0643000","long-beach-ca",161,0.0003449191903611154
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2019,"2019",558,"Long Beach, CA","16000US0643000","long-beach-ca",1464,0.0031364080415445523
+5,"Some Other Race Alone",1,"Hispanic or Latino",2019,"2019",3919,"Long Beach, CA","16000US0643000","long-beach-ca",75673,0.16211844653538313
+6,"Two or More Races",0,"Not Hispanic or Latino",2019,"2019",1045.4109239911359,"Long Beach, CA","16000US0643000","long-beach-ca",13041,0.027938454419250348
+6,"Two or More Races",1,"Hispanic or Latino",2019,"2019",890.8338790144884,"Long Beach, CA","16000US0643000","long-beach-ca",8731,0.0187049034226267
+0,"White Alone",0,"Not Hispanic or Latino",2018,"2018",2631,"Long Beach, CA","16000US0643000","long-beach-ca",131851,0.28120234685411927
+0,"White Alone",1,"Hispanic or Latino",2018,"2018",2983,"Long Beach, CA","16000US0643000","long-beach-ca",111953,0.23876532098625883
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2018,"2018",2559,"Long Beach, CA","16000US0643000","long-beach-ca",58436,0.12462810551886078
+1,"Black or African American Alone",1,"Hispanic or Latino",2018,"2018",465.99999999999994,"Long Beach, CA","16000US0643000","long-beach-ca",2007,0.0042803855119507425
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2018,"2018",325,"Long Beach, CA","16000US0643000","long-beach-ca",1472,0.0031393759210719945
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2018,"2018",710,"Long Beach, CA","16000US0643000","long-beach-ca",2749,0.00586286984173024
+3,"Asian Alone",0,"Not Hispanic or Latino",2018,"2018",1877.0000000000002,"Long Beach, CA","16000US0643000","long-beach-ca",60501,0.12903218926683202
+3,"Asian Alone",1,"Hispanic or Latino",2018,"2018",259,"Long Beach, CA","16000US0643000","long-beach-ca",1121,0.0023907883203272457
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2018,"2018",765,"Long Beach, CA","16000US0643000","long-beach-ca",3599,0.007675688817892737
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2018,"2018",103,"Long Beach, CA","16000US0643000","long-beach-ca",183,0.0003902892619267493
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2018,"2018",353,"Long Beach, CA","16000US0643000","long-beach-ca",981,0.0020922063713122462
+5,"Some Other Race Alone",1,"Hispanic or Latino",2018,"2018",2874,"Long Beach, CA","16000US0643000","long-beach-ca",72216,0.15401710021476572
+6,"Two or More Races",0,"Not Hispanic or Latino",2018,"2018",992.3386518724341,"Long Beach, CA","16000US0643000","long-beach-ca",12861,0.027429017473442202
+6,"Two or More Races",1,"Hispanic or Latino",2018,"2018",890.9163821594034,"Long Beach, CA","16000US0643000","long-beach-ca",8953,0.019094315639509217
+0,"White Alone",0,"Not Hispanic or Latino",2017,"2017",2054,"Long Beach, CA","16000US0643000","long-beach-ca",129957,0.2762168722329321
+0,"White Alone",1,"Hispanic or Latino",2017,"2017",3706,"Long Beach, CA","16000US0643000","long-beach-ca",116917,0.2485010276542066
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2017,"2017",2244,"Long Beach, CA","16000US0643000","long-beach-ca",58260,0.12382861235863113
+1,"Black or African American Alone",1,"Hispanic or Latino",2017,"2017",657,"Long Beach, CA","16000US0643000","long-beach-ca",2524,0.005364631266618348
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2017,"2017",393,"Long Beach, CA","16000US0643000","long-beach-ca",1534,0.0032604375447672527
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2017,"2017",901,"Long Beach, CA","16000US0643000","long-beach-ca",4155,0.008831237287162931
+3,"Asian Alone",0,"Not Hispanic or Latino",2017,"2017",1997.9999999999998,"Long Beach, CA","16000US0643000","long-beach-ca",61269,0.13022408600413612
+3,"Asian Alone",1,"Hispanic or Latino",2017,"2017",295,"Long Beach, CA","16000US0643000","long-beach-ca",962,0.0020446811721421755
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2017,"2017",958,"Long Beach, CA","16000US0643000","long-beach-ca",4050,0.008608065225754481
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2017,"2017",162,"Long Beach, CA","16000US0643000","long-beach-ca",234,0.0004973548797102589
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2017,"2017",246.00000000000003,"Long Beach, CA","16000US0643000","long-beach-ca",836,0.0017768746984520361
+5,"Some Other Race Alone",1,"Hispanic or Latino",2017,"2017",3641,"Long Beach, CA","16000US0643000","long-beach-ca",67884,0.14428392587286845
+6,"Two or More Races",0,"Not Hispanic or Latino",2017,"2017",1053.8026380684385,"Long Beach, CA","16000US0643000","long-beach-ca",13060,0.02775835354280334
+6,"Two or More Races",1,"Hispanic or Latino",2017,"2017",887.8473967974451,"Long Beach, CA","16000US0643000","long-beach-ca",8847,0.01880384025981479
+0,"White Alone",0,"Not Hispanic or Latino",2016,"2016",2315,"Long Beach, CA","16000US0643000","long-beach-ca",130196,0.27713482320937094
+0,"White Alone",1,"Hispanic or Latino",2016,"2016",3757.9999999999995,"Long Beach, CA","16000US0643000","long-beach-ca",119366,0.25408211701749495
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2016,"2016",2217,"Long Beach, CA","16000US0643000","long-beach-ca",58926,0.1254297105320854
+1,"Black or African American Alone",1,"Hispanic or Latino",2016,"2016",627,"Long Beach, CA","16000US0643000","long-beach-ca",2328,0.004955373962575007
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2016,"2016",363,"Long Beach, CA","16000US0643000","long-beach-ca",1559,0.0033184828211574036
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2016,"2016",874.0000000000001,"Long Beach, CA","16000US0643000","long-beach-ca",4051,0.00862294670205814
+3,"Asian Alone",0,"Not Hispanic or Latino",2016,"2016",2118,"Long Beach, CA","16000US0643000","long-beach-ca",60123,0.12797764121645064
+3,"Asian Alone",1,"Hispanic or Latino",2016,"2016",349,"Long Beach, CA","16000US0643000","long-beach-ca",1161,0.002471301190098618
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2016,"2016",825,"Long Beach, CA","16000US0643000","long-beach-ca",4146,0.008825163423039508
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2016,"2016",122,"Long Beach, CA","16000US0643000","long-beach-ca",254,0.0005406636539922903
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2016,"2016",244,"Long Beach, CA","16000US0643000","long-beach-ca",888,0.001890194191910054
+5,"Some Other Race Alone",1,"Hispanic or Latino",2016,"2016",2979,"Long Beach, CA","16000US0643000","long-beach-ca",60997,0.12983803504947924
+6,"Two or More Races",0,"Not Hispanic or Latino",2016,"2016",995.6003214141707,"Long Beach, CA","16000US0643000","long-beach-ca",14672,0.031230776107775127
+6,"Two or More Races",1,"Hispanic or Latino",2016,"2016",1185.077634587709,"Long Beach, CA","16000US0643000","long-beach-ca",11126,0.02368277092251268
+0,"White Alone",0,"Not Hispanic or Latino",2015,"2015",2230,"Long Beach, CA","16000US0643000","long-beach-ca",132243,0.2812262752611981
+0,"White Alone",1,"Hispanic or Latino",2015,"2015",3493,"Long Beach, CA","16000US0643000","long-beach-ca",118779,0.25259390477567695
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2015,"2015",2119,"Long Beach, CA","16000US0643000","long-beach-ca",58759,0.12495613913834938
+1,"Black or African American Alone",1,"Hispanic or Latino",2015,"2015",522,"Long Beach, CA","16000US0643000","long-beach-ca",1859,0.003953325663442052
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2015,"2015",365,"Long Beach, CA","16000US0643000","long-beach-ca",1421,0.003021880456025366
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2015,"2015",812,"Long Beach, CA","16000US0643000","long-beach-ca",4073,0.00866158979408256
+3,"Asian Alone",0,"Not Hispanic or Latino",2015,"2015",2190,"Long Beach, CA","16000US0643000","long-beach-ca",59893,0.12736768905892135
+3,"Asian Alone",1,"Hispanic or Latino",2015,"2015",299,"Long Beach, CA","16000US0643000","long-beach-ca",965,0.0020521566784408715
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2015,"2015",1100,"Long Beach, CA","16000US0643000","long-beach-ca",4319,0.009184730253042615
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2015,"2015",192,"Long Beach, CA","16000US0643000","long-beach-ca",299,0.0006358495822319384
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2015,"2015",296,"Long Beach, CA","16000US0643000","long-beach-ca",1113,0.0023668915887095233
+5,"Some Other Race Alone",1,"Hispanic or Latino",2015,"2015",2986,"Long Beach, CA","16000US0643000","long-beach-ca",58902,0.1252602411124603
+6,"Two or More Races",0,"Not Hispanic or Latino",2015,"2015",1373.5188386039706,"Long Beach, CA","16000US0643000","long-beach-ca",14922,0.03173293466911366
+6,"Two or More Races",1,"Hispanic or Latino",2015,"2015",1282.0471910191138,"Long Beach, CA","16000US0643000","long-beach-ca",12690,0.026986391968305344
+0,"White Alone",0,"Not Hispanic or Latino",2014,"2014",2222,"Long Beach, CA","16000US0643000","long-beach-ca",131481,0.28058617908039796
+0,"White Alone",1,"Hispanic or Latino",2014,"2014",3352,"Long Beach, CA","16000US0643000","long-beach-ca",119815,0.2556904271074747
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2014,"2014",2245,"Long Beach, CA","16000US0643000","long-beach-ca",59067,0.1260515499558253
+1,"Black or African American Alone",1,"Hispanic or Latino",2014,"2014",619,"Long Beach, CA","16000US0643000","long-beach-ca",1704,0.003636410197313666
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2014,"2014",350,"Long Beach, CA","16000US0643000","long-beach-ca",1247,0.0026611522981514913
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2014,"2014",819,"Long Beach, CA","16000US0643000","long-beach-ca",3311,0.00706581817095396
+3,"Asian Alone",0,"Not Hispanic or Latino",2014,"2014",2307,"Long Beach, CA","16000US0643000","long-beach-ca",60203,0.12847582342070107
+3,"Asian Alone",1,"Hispanic or Latino",2014,"2014",298,"Long Beach, CA","16000US0643000","long-beach-ca",976,0.002082826497991865
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2014,"2014",1017.9999999999999,"Long Beach, CA","16000US0643000","long-beach-ca",4388,0.009364183066791295
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2014,"2014",223,"Long Beach, CA","16000US0643000","long-beach-ca",301,0.0006423471064503601
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2014,"2014",332,"Long Beach, CA","16000US0643000","long-beach-ca",1089,0.0023239734183536282
+5,"Some Other Race Alone",1,"Hispanic or Latino",2014,"2014",2951,"Long Beach, CA","16000US0643000","long-beach-ca",55545,0.11853544859729317
+6,"Two or More Races",0,"Not Hispanic or Latino",2014,"2014",1293.9756566489186,"Long Beach, CA","16000US0643000","long-beach-ca",15752,0.03361545388972117
+6,"Two or More Races",1,"Hispanic or Latino",2014,"2014",1577.195295453293,"Long Beach, CA","16000US0643000","long-beach-ca",13715,0.029268407192580358
+0,"White Alone",0,"Not Hispanic or Latino",2013,"2013",2273,"Long Beach, CA","16000US0643000","long-beach-ca",134154,0.2882404001512599
+0,"White Alone",1,"Hispanic or Latino",2013,"2013",3795,"Long Beach, CA","16000US0643000","long-beach-ca",111475,0.23951278833923476
+1,"Black or African American Alone",0,"Not Hispanic or Latino",2013,"2013",2171,"Long Beach, CA","16000US0643000","long-beach-ca",60883,0.13081190484375538
+1,"Black or African American Alone",1,"Hispanic or Latino",2013,"2013",547,"Long Beach, CA","16000US0643000","long-beach-ca",1749,0.0037578637973116986
+2,"American Indian & Alaska Native Alone",0,"Not Hispanic or Latino",2013,"2013",354,"Long Beach, CA","16000US0643000","long-beach-ca",1328,0.0028533122486163152
+2,"American Indian & Alaska Native Alone",1,"Hispanic or Latino",2013,"2013",763,"Long Beach, CA","16000US0643000","long-beach-ca",2951,0.006340455154869538
+3,"Asian Alone",0,"Not Hispanic or Latino",2013,"2013",2208,"Long Beach, CA","16000US0643000","long-beach-ca",58338,0.12534377256007426
+3,"Asian Alone",1,"Hispanic or Latino",2013,"2013",347,"Long Beach, CA","16000US0643000","long-beach-ca",1126,0.0024192993915225685
+4,"Native Hawaiian & Other Pacific Islander Alone",0,"Not Hispanic or Latino",2013,"2013",747,"Long Beach, CA","16000US0643000","long-beach-ca",3406,0.0073180583725807
+4,"Native Hawaiian & Other Pacific Islander Alone",1,"Hispanic or Latino",2013,"2013",284,"Long Beach, CA","16000US0643000","long-beach-ca",294,0.0006316820791364433
+5,"Some Other Race Alone",0,"Not Hispanic or Latino",2013,"2013",358,"Long Beach, CA","16000US0643000","long-beach-ca",1077,0.002314019044999828
+5,"Some Other Race Alone",1,"Hispanic or Latino",2013,"2013",3534.9999999999995,"Long Beach, CA","16000US0643000","long-beach-ca",59908,0.12871704080580287
+6,"Two or More Races",0,"Not Hispanic or Latino",2013,"2013",1269.7673015163055,"Long Beach, CA","16000US0643000","long-beach-ca",15874,0.034106535116367014
+6,"Two or More Races",1,"Hispanic or Latino",2013,"2013",1467.5697598410782,"Long Beach, CA","16000US0643000","long-beach-ca",12861,0.027632868094468698

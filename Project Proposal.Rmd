@@ -1,0 +1,147 @@
+---
+title: "DATA 606 Data Project Proposal"
+author: "Coco Donovan"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+### Loading Necessary Packages
+
+```{r}
+library(dplyr)
+```
+
+### Data Preparation
+
+```{r setup, echo=TRUE, results='hide', warning=FALSE, message=FALSE}
+lb_police_stops <- read.csv('lbpd-ripa-data-annual.csv')
+
+
+head(lb_police_stops)
+```
+
+
+### Research question 
+
+**You should phrase your research question in a way that matches up with the scope of inference your dataset allows for.**
+
+Research Question: Is there a meaningful difference in the stop frequency and 
+actions taken by Long Beach Police Officers for civilians of different "Perceived
+[Ethnicity]?"
+
+Notes: The wording is "Perceived Race," but the correct wording should be 
+"Perceived Ethnicity," hence the brackets around "Ethnicity." Also, it's important
+to note the word "Perceived," this comes from the Police Officer's Perception of
+of a civilian and is not an exact science, and it is the data to which we have
+access.
+
+### Cases 
+
+**What are the cases, and how many are there?**
+
+The cases are the individual traffic stops that took place in the City of Long
+Beach's Police Departments jurisdiction from 1/1/2019 to 12/31/2021. There are 
+69,711 recorded stops and therefore there are 69,711 cases in this data.
+
+```{r}
+min(lb_police_stops$Stop.Date)
+max(lb_police_stops$Stop.Date)
+nrow(lb_police_stops)
+```
+
+
+### Data collection 
+
+**Describe the method of data collection.**
+
+This comes directly from the City of Long Beach Data Website, "This dataset 
+captures information about the stops that were conducted by Long Beach Police 
+Department. LBPD officers conducting stops capture information required by The 
+Racial and Identity Profiling Act of 2015 (AB 953). The data captured are 
+submitted to the State of California annually, and is made available to the 
+public via this dataset."
+
+### Type of study 
+
+**What type of study is this (observational/experiment)?**
+
+This is an observational study. In theory the police continue along with their 
+normal policing tactics, but just record the information needed in accordance 
+with the law.
+
+### Data Source 
+
+**If you collected the data, state self-collected. If not, provide a citation/link.**
+
+Link = "https://data.longbeach.gov/explore/dataset/lbpd-ripa-data-annual/table/?disjunctive.pid&disjunctive.perceivedage&disjunctive.actions_taken&disjunctive.did_consent_for_person_search&disjunctive.did_consent_for_property_search&disjunctive.perceived_races&disjunctive.num_perceived_races&disjunctive.perceived_race_simplified&disjunctive.all_reason_for_stop&disjunctive.all_reason_for_stopdesc&disjunctive.all_reason_for_stopcode_text&disjunctive.all_reason_for_stop_detail&disjunctive.num_reason_for_stop&disjunctive.reason_for_stop_simplified&disjunctive.all_result_of_stop&disjunctive.all_result_of_stop_code&disjunctive.all_result_of_stopcode_text&disjunctive.result_of_stop_simplified&disjunctive.was_detained&disjunctive.num_result_of_stop&disjunctive.stophour&disjunctive.timeofday&disjunctive.was_handcuffed&disjunctive.was_searched&disjunctive.was_removed_from_vehicle&rows=1000&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJiYXIiLCJmdW5jIjoiQ09VTlQiLCJ5QXhpcyI6InN0b3BpZCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6InJhbmdlLWN1c3RvbSJ9XSwieEF4aXMiOiJwZXJjZWl2ZWRfcmFjZV9zaW1wbGlmaWVkIiwibWF4cG9pbnRzIjoiIiwidGltZXNjYWxlIjoiIiwic29ydCI6IiIsInNlcmllc0JyZWFrZG93biI6InJlYXNvbl9mb3Jfc3RvcF9zaW1wbGlmaWVkIiwic2VyaWVzQnJlYWtkb3duVGltZXNjYWxlIjoiIiwic3RhY2tlZCI6InBlcmNlbnQiLCJjb25maWciOnsiZGF0YXNldCI6ImxicGQtcmlwYS1kYXRhLWFubnVhbCIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUucGlkIjp0cnVlLCJkaXNqdW5jdGl2ZS5wZXJjZWl2ZWRhZ2UiOnRydWUsImRpc2p1bmN0aXZlLmFjdGlvbnNfdGFrZW4iOnRydWUsImRpc2p1bmN0aXZlLmRpZF9jb25zZW50X2Zvcl9wZXJzb25fc2VhcmNoIjp0cnVlLCJkaXNqdW5jdGl2ZS5kaWRfY29uc2VudF9mb3JfcHJvcGVydHlfc2VhcmNoIjp0cnVlLCJkaXNqdW5jdGl2ZS5wZXJjZWl2ZWRfcmFjZXMiOnRydWUsImRpc2p1bmN0aXZlLm51bV9wZXJjZWl2ZWRfcmFjZXMiOnRydWUsImRpc2p1bmN0aXZlLnBlcmNlaXZlZF9yYWNlX3NpbXBsaWZpZWQiOnRydWUsImRpc2p1bmN0aXZlLmFsbF9yZWFzb25fZm9yX3N0b3AiOnRydWUsImRpc2p1bmN0aXZlLmFsbF9yZWFzb25fZm9yX3N0b3BkZXNjIjp0cnVlLCJkaXNqdW5jdGl2ZS5hbGxfcmVhc29uX2Zvcl9zdG9wY29kZV90ZXh0Ijp0cnVlLCJkaXNqdW5jdGl2ZS5hbGxfcmVhc29uX2Zvcl9zdG9wX2RldGFpbCI6dHJ1ZSwiZGlzanVuY3RpdmUubnVtX3JlYXNvbl9mb3Jfc3RvcCI6dHJ1ZSwiZGlzanVuY3RpdmUucmVhc29uX2Zvcl9zdG9wX3NpbXBsaWZpZWQiOnRydWUsImRpc2p1bmN0aXZlLmFsbF9yZXN1bHRfb2Zfc3RvcCI6dHJ1ZSwiZGlzanVuY3RpdmUuYWxsX3Jlc3VsdF9vZl9zdG9wX2NvZGUiOnRydWUsImRpc2p1bmN0aXZlLmFsbF9yZXN1bHRfb2Zfc3RvcGNvZGVfdGV4dCI6dHJ1ZSwiZGlzanVuY3RpdmUucmVzdWx0X29mX3N0b3Bfc2ltcGxpZmllZCI6dHJ1ZSwiZGlzanVuY3RpdmUud2FzX2RldGFpbmVkIjp0cnVlLCJkaXNqdW5jdGl2ZS5udW1fcmVzdWx0X29mX3N0b3AiOnRydWUsImRpc2p1bmN0aXZlLnN0b3Bob3VyIjp0cnVlLCJkaXNqdW5jdGl2ZS50aW1lb2ZkYXkiOnRydWUsImRpc2p1bmN0aXZlLndhc19oYW5kY3VmZmVkIjp0cnVlLCJkaXNqdW5jdGl2ZS53YXNfc2VhcmNoZWQiOnRydWUsImRpc2p1bmN0aXZlLndhc19yZW1vdmVkX2Zyb21fdmVoaWNsZSI6dHJ1ZX19fV0sImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWUsInRpbWVzY2FsZSI6IiJ9"
+
+
+### Dependent Variable
+
+**What is the response variable? Is it quantitative or qualitative?**
+
+I'd like to look at a few response variables, Duration of the Stop, and treatment 
+during the stop. Also, this is not so much a variable, but I think it will be 
+important to look at the stop frequency compared across the specific demographic 
+that I am looking at (Ethnicity, Gender, Able-Bodied/Disabled, etc.)
+
+### Independent Variable(s)
+
+The main independent variable I want to look at is "Perceived [Ethnicity]" and 
+given that the data also provides "Perceived Gender," "Perceived LGBT," and 
+"Perceived Disability," there are a few values that I could use as my indepedent 
+variable to see how changing demographics may affect traffic stop frequency and 
+treatment during the stop.
+
+
+### Relevant summary statistics 
+
+**Provide summary statistics for each the variables. Also include appropriate visualizations related to your research question (e.g. scatter plot, boxplots, etc). This step requires the use of R, hence a code chunk is provided below. Insert more code chunks as needed.**
+
+
+#### Overview: Percentages by Ethnicity Breakdown of all Stops
+
+```{r}
+Percent_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(Percent_of_Stops = 100 * n()/nrow(.)) %>%
+  arrange(desc(Percent_of_Stops))
+
+knitr::kable(Percent_by_Eth)
+```
+
+#### Ethnicty vs Action Taken During Stop
+
+```{r}
+Action_Taken_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified", "Num.Actions.Taken") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(avg_num_of_actions = mean(Num.Actions.Taken)) %>%
+  arrange(desc(avg_num_of_actions))
+
+knitr::kable(Action_Taken_by_Eth)
+```
+
+#### Ethnicity vs Stop Duration Boxplot
+
+```{r}
+Stop_time_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified", "Stop.Duration") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(avg_stop_time = mean(Stop.Duration)) %>%
+  arrange(desc(avg_stop_time))
+
+knitr::kable(Stop_time_by_Eth)
+
+# Tried a boxplot, but it was too crowded and there were too many extreme outliers
+
+# boxplot(Stop.Duration~Perceived.Race.Simplified, data=lb_police_stops, main="Ethnicity and Traffic Stop Duration",
+#   xlab="Ethnicity", ylab="Stop Duration")
+```
+
+Because of the outliers, the boxplot may not be the clearest visualization
+of the dynamic Ethnicity may play in influencing the Traffic Stop Experience.

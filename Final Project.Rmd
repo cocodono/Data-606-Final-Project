@@ -1,0 +1,276 @@
+---
+title: "Final Project"
+author: "Coco Donovan"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Abstract:
+
+The California Racial and Identity Profiling Act of 2015 (AB 953) mandated, 
+among other items: law enforcement is prohibited from profiling based on race/
+ethnicity or identity and that law enforcement be required to submit data on 
+vehicle/pedestrian stops and citizen complaints alleging racial and identity 
+profiling.
+
+The primary dataset I analyzed comes from the reported Police Stop data from the
+Long Beach Police Department between Jan 1st, 2019, and Dec 31st, 2021. In this 
+analysis, I intend to focus specifically on the differences in policing people 
+of different ethnicities as measured by stop duration and the number of actions 
+taken by the Long Beach Police Department during the stop.
+
+### Loading Necessary Packages
+
+```{r}
+library(dplyr)
+library(tidyverse)
+library(openintro)
+library(infer)
+library(ggplot2)
+```
+
+### Data Preparation
+
+```{r}
+lb_police_stops <- read.csv('lbpd-ripa-data-annual.csv')
+
+# head(lb_police_stops)
+
+# colnames(lb_police_stops)
+```
+
+Limitations: When comparing police "perceived race" with official data on ethnicity for 
+Long Beach the comparison it is clear that there is less nuance to the police
+"race" data. I understand identity is far more complex than the way I have simplified
+it for the purpose of analysis, and for the purpose of this less extensive analysis
+my simplified classifications will be used to present the data.
+
+__________________________________________________________________________
+
+### Population of Long Beach, CA by Ethnicity
+
+```{r}
+lb_population <- read.csv('Race and Ethnicity.csv')
+
+lb_population <- lb_population %>%
+  filter(Year == 2020)
+
+# lb_population
+
+lb_population_eth_percentage <- lb_population %>%
+  mutate(eth_true = ifelse(Ethnicity == 'Hispanic or Latino', 'Hispanic', Race)) %>%
+  group_by(eth_true) %>%
+  summarize(percentage = round(100 * sum(share),2)) %>%
+  arrange(desc(percentage))
+
+knitr::kable(lb_population_eth_percentage)
+```
+
+### Visualization
+
+```{r}
+ggplot(data = lb_population_eth_percentage, mapping = aes(y = reorder(eth_true, percentage), x = percentage, fill = eth_true)) +
+  geom_bar(stat = 'identity') + 
+  labs(y = 'Ethnicity', x = 'Percent of Population', fill = 'Ethnicity', title = "Percent of Population of Long Beach, CA by Ethnicity") + 
+  theme(legend.position = "none")
+```
+
+_________________________________________________________________________
+
+### Percentages by Ethnicity Breakdown of all Stops
+
+Note: maybe pull the demographics of long beach and compare for proportionality
+I know it's two data sources, but I'll live
+
+```{r}
+Percent_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(Percent_of_Stops = 100 * n()/nrow(.), total_stops = n()) %>%
+  arrange(desc(Percent_of_Stops))
+
+knitr::kable(Percent_by_Eth)
+```
+
+### Visualization
+
+```{r}
+ggplot(data = Percent_by_Eth, mapping = aes(y = reorder(Perceived.Race.Simplified, Percent_of_Stops), x = Percent_of_Stops, fill = Perceived.Race.Simplified)) +
+  geom_bar(stat = 'identity') + 
+  labs(y = 'Perceived Ethnicity', x = 'Percent of Total Stops', fill = 'Perceived Ethnicity', title = 'Percent of Total Stops by Ethnicity') +
+  theme(legend.position = "none")
+```
+
+_________________________________________________________________________
+
+### Ethnicity vs Duration of Stop
+
+```{r}
+# colnames(lb_police_stops)
+
+Stop_duration_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified", "Stop.Duration") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(avg_duration = mean(Stop.Duration)) %>%
+  arrange(desc(avg_duration))
+
+knitr::kable(Stop_duration_by_Eth)
+```
+
+### Visualization
+
+```{r}
+ggplot(data = Stop_duration_by_Eth, mapping = aes(y = reorder(Perceived.Race.Simplified, avg_duration), x = avg_duration, fill = Perceived.Race.Simplified)) +
+  geom_bar(stat = 'identity') + 
+  labs(y = 'Perceived Ethnicity', x = 'Stop Duration', fill = 'Perceived Ethnicity', title = "Average Stop Duration by Ethnicity") +
+  theme(legend.position = "none")
+```
+
+### 95% Confidence Intervals of Stop Duration by Ethnicity
+
+```{r}
+summary_stops_by_eth <- lb_police_stops %>% 
+  group_by(Perceived.Race.Simplified) %>% 
+  summarise(sd_time = sd(Stop.Duration, na.rm = TRUE), mean_time = mean(Stop.Duration, na.rm = TRUE), count_stops = sum(table(Stop.Duration)))
+
+summary_stops_by_eth <- summary_stops_by_eth %>%
+  mutate(lower_ci = mean_time - 1.96 * (sd_time / sqrt(count_stops)), upper_ci = mean_time + 1.96 * (sd_time / sqrt(count_stops)))
+
+arranged_summary_stops <- summary_stops_by_eth %>%
+  select(Perceived.Race.Simplified, lower_ci, upper_ci, count_stops) %>%
+  arrange(desc(lower_ci))
+
+knitr::kable(arranged_summary_stops)
+```
+
+### Visualization
+
+```{r}
+ggplot(arranged_summary_stops) +
+  geom_segment( aes(x=reorder(Perceived.Race.Simplified, lower_ci), xend=Perceived.Race.Simplified, y=lower_ci, yend=upper_ci), color="black") +
+  geom_point( aes(x=Perceived.Race.Simplified, y=lower_ci), size=3 ) +
+  geom_point( aes(x=Perceived.Race.Simplified, y=upper_ci), size=3 ) +
+  coord_flip()+
+  theme(
+    legend.position = "none",
+  ) +
+  xlab("") +
+  ylab("Stop Duration (Minutes)") +
+  labs(title= "95% Confidence Interval by Ethnicity for Stop Duration (Minutes)")
+```
+
+__________________________________________________________________________
+
+### Ethnicty vs Action Taken During Stop
+
+```{r}
+Action_Taken_by_Eth <- lb_police_stops %>%
+  select("Perceived.Race.Simplified", "Num.Actions.Taken") %>%
+  group_by(Perceived.Race.Simplified) %>%
+  summarise(avg_num_of_actions = mean(Num.Actions.Taken)) %>%
+  arrange(desc(avg_num_of_actions))
+
+knitr::kable(Action_Taken_by_Eth)
+```
+
+### Given a person stopped is black, what is the likelihood action is taken? (Sampling)
+
+```{r}
+black_and_action_taken <- lb_police_stops %>%
+  filter(Perceived.Race.Simplified == 'Black/African American') %>%
+  mutate(action_taken = ifelse(Actions.Taken != 'None', "yes", "no"))
+
+black_and_action_taken %>%
+  filter(!is.na(action_taken)) %>%
+  specify(response = action_taken, success = "yes") %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "prop") %>%
+  get_ci(level = 0.95)
+```
+
+### Given and person is Hispanic or Latino, what is the likelihood a police will take action
+
+```{r}
+hispanic_and_action_taken <- lb_police_stops %>%
+  filter(Perceived.Race.Simplified == "Hispanic/Latino/a") %>%
+  mutate(action_taken = ifelse(Actions.Taken != 'None', "yes", "no"))
+
+hispanic_and_action_taken %>%
+  filter(!is.na(action_taken)) %>%
+  specify(response = action_taken, success = "yes") %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "prop") %>%
+  get_ci(level = 0.95)
+```
+
+### Given a person is white, what is the likelihood of police action?
+
+```{r}
+white_and_action_taken <- lb_police_stops %>%
+  filter(Perceived.Race.Simplified == 'White') %>%
+  mutate(action_taken = ifelse(Actions.Taken != 'None', "yes", "no"))
+
+white_and_action_taken %>%
+  filter(!is.na(action_taken)) %>%
+  specify(response = action_taken, success = "yes") %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "prop") %>%
+  get_ci(level = 0.95)
+```
+
+### Given a person is Asian, what is the likelihood of police action?
+
+```{r}
+Asian_and_action_taken <- lb_police_stops %>%
+  filter(Perceived.Race.Simplified == 'Asian') %>%
+  mutate(action_taken = ifelse(Actions.Taken != 'None', "yes", "no"))
+
+Asian_and_action_taken %>%
+  filter(!is.na(action_taken)) %>%
+  specify(response = action_taken, success = "yes") %>%
+  generate(reps = 1000, type = "bootstrap") %>%
+  calculate(stat = "prop") %>%
+  get_ci(level = 0.95)
+```
+
+__________________________________________________________________________
+
+### Does more time with the police Mean more actions taken?
+
+```{r}
+lb_police_stops %>%
+  summarise(cor(Stop.Duration, Num.Actions.Taken, use = "complete.obs"))
+
+lb_police_stops %>%
+  filter(Perceived.Race.Simplified == "Black/African American") %>%
+    summarise(cor(Stop.Duration, Num.Actions.Taken, use = "complete.obs"))
+```
+
+__________________________________________________________________________
+
+## Conclusion:
+
+In conclusion, we can see from the data that the Black Community in Long Beach 
+experiences disproportionately long Police Stops when compared to people of other
+races (with exception of the ethnicities that made up smaller portions of the 
+overall population i.e. Native American and Pacific Islander populations). The 
+Black community also experienced a disproportionate amount of police action, when 
+compared to the ethnicities that made up larger portions of the population.
+
+When I quickly checked to see if there was correlation between the stop duration
+and the number of actions taken, there was only weak correlation at best. 
+
+Though what is clear is that the Black community of long beach faces statistically 
+significant unfair treatment at the hands of the Long Beach Police Department 
+during Police Stops.
+
+### Additional Analysis Possibilities:
+
+This is something I did not have time for, but a cool addition to this sort of 
+analysis would be to classify actions by Violent vs Non Violent (Use of Force vs
+Non-Use-of-Force). I would have to do some reading to see which actions are
+classified by department definition as use of force and then repeat this sort of
+analysis with the a binary representing whether or not an encounter involved the 
+use of force and the counted number of uses of force.
